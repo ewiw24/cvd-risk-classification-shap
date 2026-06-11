@@ -1,10 +1,10 @@
-# CVD Risk Classification with Explainable AI 🫀
+# CVD Risk Classification with Explainable AI 
 
 > Comparing Random Forest and XGBoost for cardiovascular 
 > disease prediction, with SHAP-based age-stratified 
 > explainability analysis across 68,489 patient records
 
-## 📊 Key Results
+## Key Results
 
 | Model | Accuracy | F1-Score | ROC-AUC |
 |-------|----------|----------|---------|
@@ -14,14 +14,14 @@
 > XGBoost selected for SHAP analysis based on superior 
 > CV stability (F1 = 0.7353 ± 0.0052 vs 0.7328 ± 0.0058)
 
-## 🎯 Research Questions
+## Research Questions
 1. Can ensemble ML achieve clinically meaningful CVD 
    classification (ROC-AUC > 0.80)?
 2. Which features dominate — clinical biomarkers or 
    lifestyle factors?
 3. Do risk factor contributions shift across age groups?
 
-## 🔍 Key Findings
+## Key Findings
 
 ### 1. Both Models Exceed Clinical Threshold
 ![RF vs XGBoost](outputs/figures/fig9_roc_curves.png)
@@ -38,9 +38,9 @@ The two curves are nearly identical and visually overlap — confirming that nei
 This chart shows the global feature importance from SHAP (SHapley Additive exPlanations) applied to the XGBoost model. Each bar represents the average absolute SHAP value for that feature across all 13,698 test patients — the longer the bar, the more that feature influences the model's predictions on average.
 
 **How to read it:**
-- 🔴 Red bars = top clinical biomarkers
-- 🔵 Blue bars = secondary features  
-- 🩵 Light blue bars = lifestyle and derived features
+- Red bars = top clinical biomarkers
+- Blue bars = secondary features  
+- Light blue bars = lifestyle and derived features
 
 **Key takeaways:**
 - Systolic BP is the single most important predictor by a
@@ -64,20 +64,20 @@ monotonically across age groups:
 - Middle-Aged (51–57 yrs): 0.097  
 - Older Adult (>57 yrs):   0.119
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Python (pandas, scikit-learn, XGBoost, SHAP)
 - Google Colab (GPU-accelerated training)
 - Matplotlib / Seaborn (visualization)
 
-## 📁 Dataset
+## Dataset
 [Cardiovascular Disease Dataset](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset)  
 N = 70,000 | Source: Kaggle (Sulianova, 2019)
 
-## 📄 Paper
+## Paper
 This project was written up as a conference paper.  
 See `IN PROGRESS`
 
-## 🚀 How to Run
+## How to Run
 # 1. Clone the repo
 git clone https://github.com/ewiw24/cvd-risk-classification-shap
 
