@@ -56,7 +56,7 @@ This chart shows the global feature importance from SHAP (SHapley Additive exPla
   far exceeds that of lifestyle factors, confirming H2
 
 ### 3. Lifestyle Importance Increases With Age
-![RF vs XGBoost](outputs/figures/fig18_shap_clinical_vs_lifestyle.png)
+![RF vs XGBoost](outputs/figures/fig18_shap_clinical_vs_lifestyle(1).png)
 
 The lifestyle-to-clinical SHAP ratio increases 
 monotonically across age groups:
