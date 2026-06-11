@@ -25,12 +25,38 @@
 
 ### 1. Both Models Exceed Clinical Threshold
 ![RF vs XGBoost](outputs/figures/fig9_roc_curves.png)
+The ROC curve compares how well each model distinguishes between CVD and non-CVD patients across all possible decision thresholds. A perfect model scores AUC = 1.0; a random guess scores 0.5.
+
+Both Random Forest (AUC = 0.8030) and XGBoost (AUC = 0.8025) exceed the clinically meaningful threshold of 0.80, meaning the models correctly rank a random CVD patient above a random non-CVD patient 80% of the time.
+
+The two curves are nearly identical and visually overlap — confirming that neither model has a meaningful advantage in overall discriminative ability. The key differentiator is cross-validation stability, where XGBoost showed lower variance (std = 0.0052 vs 0.0058), making it the more reliable choice for deployment on unseen data.
+
+---
 
 ### 2. Systolic BP Dominates Globally
 ![RF vs XGBoost](outputs/figures/fig12_shap_global_bar.png)
+This chart shows the global feature importance from SHAP (SHapley Additive exPlanations) applied to the XGBoost model. Each bar represents the average absolute SHAP value for that feature across all 13,698 test patients — the longer the bar, the more that feature influences the model's predictions on average.
+
+**How to read it:**
+- 🔴 Red bars = top clinical biomarkers
+- 🔵 Blue bars = secondary features  
+- 🩵 Light blue bars = lifestyle and derived features
+
+**Key takeaways:**
+- Systolic BP is the single most important predictor by a
+  large margin — consistent with its established role as
+  the primary CVD risk indicator in clinical guidelines
+- BP Category (AHA staging) and Diastolic BP follow,
+  confirming blood pressure dominates the model's decisions
+- Lifestyle factors (Smoking, Alcohol, Physical Activity)
+  rank lower at the population level — but their relative
+  importance changes significantly across age groups
+  (see age-stratified analysis below)
+- The total SHAP contribution of all clinical biomarkers
+  far exceeds that of lifestyle factors, confirming H2
 
 ### 3. Lifestyle Importance Increases With Age
-[Insert fig18_shap_clinical_vs_lifestyle.png]
+![RF vs XGBoost](outputs/figures/fig18_shap_clinical_vs_lifestyle.png)
 
 The lifestyle-to-clinical SHAP ratio increases 
 monotonically across age groups:
