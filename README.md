@@ -24,10 +24,10 @@
 ## 🔍 Key Findings
 
 ### 1. Both Models Exceed Clinical Threshold
-![RF vs XGBoost](fig9_roc_curves.png)
+![RF vs XGBoost](outputs/figures/fig9_roc_curves.png)
 
 ### 2. Systolic BP Dominates Globally
-![RF vs XGBoost](fig12_shap_global_bar.png)
+![RF vs XGBoost](outputs/figures/fig12_shap_global_bar.png)
 
 ### 3. Lifestyle Importance Increases With Age
 [Insert fig18_shap_clinical_vs_lifestyle.png]
